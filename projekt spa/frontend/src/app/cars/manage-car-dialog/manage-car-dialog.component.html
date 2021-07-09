@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>{{this.editMode ? 'Edytuj samochód' : 'Dodaj samochód'}}</h1>
+<div mat-dialog-content>
+  <form [formGroup]="carForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Model i marka samochodu</mat-label>
+      <input matInput type="text" formControlName="name">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Rok produkcji</mat-label>
+      <input matInput type="number" formControlName="productionYear">
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="accent" (click)="manageCar()">{{this.editMode ? 'Edytuj' : 'Dodaj'}}</button>
+  <button mat-raised-button color="primary" (click)="cancel()">Anuluj</button>
+</div>
